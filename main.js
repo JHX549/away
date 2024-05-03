@@ -1,16 +1,17 @@
 // Check if the current page is index.html
 if (window.location.pathname === '/index.html') {
     // Event listener for changing opacity of menubox
+    console.log('the event is successfully set to index page');
     window.addEventListener('scroll', function() {
         var menubox = document.getElementById('menubox');
         var scrollPosition = window.scrollY;
         var windowHeight = window.innerHeight;
-
+        console.log('event listener for changing opacity is go');
         // Calculate opacity based on scroll position
         var maxOpacityScroll = 100; // Adjust this value to change when the menu appears fully
         var opacity = scrollPosition / maxOpacityScroll;
         opacity = Math.min(1, opacity); // Ensure opacity is not greater than 1
-
+        console.log('opacity change');
         // Set the opacity of menubox
         menubox.style.opacity = opacity.toFixed(2); // Limit opacity to two decimal places for smoother transition
     });
