@@ -1,24 +1,10 @@
-// Menu fade in
-window.addEventListener('scroll', function() {
-  var menubox = document.getElementById('menubox');
-  if (window.scrollY > 100) {
-      if (menubox.style.display !== 'block') {
-          menubox.style.display = 'block';
-          fadeIn(menubox); // Call fadeIn function to add fade-in effect
-      }
-  } else {
-      menubox.style.display = 'none';
-  }
-});
-
-function fadeIn(element) {
-  var opacity = 0;
-  var intervalID = setInterval(function() {
-      if (opacity < 1) {
-          opacity += 0.1;
-          element.style.opacity = opacity;
-      } else {
-          clearInterval(intervalID);
-      }
-  }, 50);
-}
+// Event listener for changing opacity of menubox
+    window.addEventListener('scroll', function() {
+        var menubox = document.getElementById('menubox');
+        console.log('Menubox element:', menubox);
+        var scrollPosition = window.scrollY;
+        var maxOpacityScroll = 1000; // Adjust this value to change when the menu appears fully
+        var opacity = scrollPosition / maxOpacityScroll;
+        opacity = Math.min(1, opacity); // Ensure opacity is not greater than 1
+        menubox.style.opacity = opacity.toFixed(2); // Limit opacity to two decimal places for smoother transition
+    });
