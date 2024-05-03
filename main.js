@@ -316,6 +316,7 @@ function applyImageDataFilter(imageData) {
 
 // Check if the current page is index.html
 if (window.location.pathname === '/index.html') {
+    console.log('Executing JavaScript for index.html');
     // Menu fade in
     window.addEventListener('scroll', function() {
         var menubox = document.getElementById('menubox');
