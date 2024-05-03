@@ -1,78 +1,117 @@
 // Check if the current page is index.html
 if (window.location.pathname === '/index.html') {
     // Event listener for changing opacity of menubox
-    console.log('the event is successfully set to index page');
     window.addEventListener('scroll', function() {
         var menubox = document.getElementById('menubox');
         var scrollPosition = window.scrollY;
-        var windowHeight = window.innerHeight;
-        console.log('event listener for changing opacity is go');
-        // Calculate opacity based on scroll position
-        var maxOpacityScroll = 100; // Adjust this value to change when the menu appears fully
+        var maxOpacityScroll = 1000; // Adjust this value to change when the menu appears fully
         var opacity = scrollPosition / maxOpacityScroll;
         opacity = Math.min(1, opacity); // Ensure opacity is not greater than 1
-        console.log('opacity change');
-        // Set the opacity of menubox
         menubox.style.opacity = opacity.toFixed(2); // Limit opacity to two decimal places for smoother transition
     });
 }
 
-// Event listener for changing opacity of both logobox and sentence
+// Event listener for changing opacity of both logobox and sentence, and changing position of logobox
 window.addEventListener('scroll', function() {
     var logobox = document.getElementById('logobox');
     var sentence = document.getElementById('sentence');
     var scrollPosition = window.scrollY;
 
-    // Calculate opacity based on scroll position
-    var opacity = 1 - (scrollPosition / (window.innerHeight * 3));
-    opacity = Math.max(0, opacity); // Ensure opacity is not negative
-    opacity = Math.min(1, opacity); // Ensure opacity is not greater than 1
+    // Calculate opacity based on scroll position for logobox
+    var logoboxOpacity = 1 - (scrollPosition / (window.innerHeight * 0.3));
+    logoboxOpacity = Math.max(0, logoboxOpacity); // Ensure opacity is not negative
+    logoboxOpacity = Math.min(1, logoboxOpacity); // Ensure opacity is not greater than 1
+
+    // Calculate opacity based on scroll position for sentence
+    var sentenceOpacity = 1 - (scrollPosition / (window.innerHeight * 3));
+    sentenceOpacity = Math.max(0, sentenceOpacity); // Ensure opacity is not negative
+    sentenceOpacity = Math.min(1, sentenceOpacity); // Ensure opacity is not greater than 1
 
     // Set the opacity of logobox and sentence
-    logobox.style.opacity = opacity.toFixed(2); // Limit opacity to two decimal places for smoother transition
-    sentence.style.opacity = opacity.toFixed(2);
+    logobox.style.opacity = logoboxOpacity.toFixed(2); // Limit opacity to two decimal places for smoother transition
+    sentence.style.opacity = sentenceOpacity.toFixed(2);
+
+    // // Calculate the new top position for the logobox based on scroll position
+    // var newPosition = 50 + scrollPosition * 1; // Adjust the scroll speed as needed
+
+    // // Apply the new position to the logobox
+    // logobox.style.top = newPosition + 'vh';
 });
 
-// Event listener for changing position of logobox
-window.addEventListener('scroll', function() {
-    var logobox = document.getElementById('logobox');
-    var scrollPosition = window.scrollY;
+// // Check if the current page is index.html
+// if (window.location.pathname === '/index.html') {
+//     // Event listener for changing opacity of menubox
+//     console.log('the event is successfully set to index page');
+//     window.addEventListener('scroll', function() {
+//         var menubox = document.getElementById('menubox');
+//         var scrollPosition = window.scrollY;
+//         var windowHeight = window.innerHeight;
+//         console.log('event listener for changing opacity is go');
+//         // Calculate opacity based on scroll position
+//         var maxOpacityScroll = 100; // Adjust this value to change when the menu appears fully
+//         var opacity = scrollPosition / maxOpacityScroll;
+//         opacity = Math.min(1, opacity); // Ensure opacity is not greater than 1
+//         console.log('opacity change');
+//         // Set the opacity of menubox
+//         menubox.style.opacity = opacity.toFixed(2); // Limit opacity to two decimal places for smoother transition
+//     });
+// }
 
-    // Calculate opacity based on scroll position
-    var opacity = 1 - (scrollPosition / (window.innerHeight * 5));
-    opacity = Math.max(0, opacity); // Ensure opacity is not negative
-    opacity = Math.min(1, opacity); // Ensure opacity is not greater than 1
+// // Event listener for changing opacity of both logobox and sentence
+// window.addEventListener('scroll', function() {
+//     var sentence = document.getElementById('sentence');
+//     var scrollPosition = window.scrollY;
 
-    // Set the opacity of logobox
-    logobox.style.opacity = opacity.toFixed(2); // Limit opacity to two decimal places for smoother transition
+//     // Calculate opacity based on scroll position
+//     var opacity = 1 - (scrollPosition / (window.innerHeight * 3));
+//     opacity = Math.max(0, opacity); // Ensure opacity is not negative
+//     opacity = Math.min(1, opacity); // Ensure opacity is not greater than 1
 
-    // Calculate the new top position for the logobox based on scroll position
-    var newPosition = 50 + scrollPosition * 1; // Adjust the scroll speed as needed
+//     // Set the opacity of logobox and sentence
+//     logobox.style.opacity = opacity.toFixed(2); // Limit opacity to two decimal places for smoother transition
+//     sentence.style.opacity = opacity.toFixed(2);
+// });
 
-    // Apply the new position to the logobox
-    logobox.style.top = newPosition + 'vh';
-});
+// // Event listener for changing position of logobox
+// window.addEventListener('scroll', function() {
+//     var logobox = document.getElementById('logobox');
+//     var scrollPosition = window.scrollY;
+
+//     // Calculate opacity based on scroll position
+//     var opacity = 1 - (scrollPosition / (window.innerHeight * 5));
+//     opacity = Math.max(0, opacity); // Ensure opacity is not negative
+//     opacity = Math.min(1, opacity); // Ensure opacity is not greater than 1
+
+//     // Set the opacity of logobox
+//     logobox.style.opacity = opacity.toFixed(2); // Limit opacity to two decimal places for smoother transition
+
+//     // Calculate the new top position for the logobox based on scroll position
+//     var newPosition = 50 + scrollPosition * 1; // Adjust the scroll speed as needed
+
+//     // Apply the new position to the logobox
+//     logobox.style.top = newPosition + 'vh';
+// });
 
 
-  window.addEventListener('scroll', function() {
-    var logobox = document.getElementById('logobox');
-    var scrollPosition = window.scrollY;
+//   window.addEventListener('scroll', function() {
+//     var logobox = document.getElementById('logobox');
+//     var scrollPosition = window.scrollY;
 
-    // Calculate opacity based on scroll position
-    var opacity = 1 - (scrollPosition / window.innerHeight * 5);
-    opacity = Math.max(0, opacity); // Ensure opacity is not negative
-    opacity = Math.min(1, opacity); // Ensure opacity is not greater than 1
+//     // Calculate opacity based on scroll position
+//     var opacity = 1 - (scrollPosition / window.innerHeight * 5);
+//     opacity = Math.max(0, opacity); // Ensure opacity is not negative
+//     opacity = Math.min(1, opacity); // Ensure opacity is not greater than 1
 
-    // Set the opacity of logobox
-    logobox.style.opacity = opacity.toFixed(2); // Limit opacity to two decimal places for smoother transition
+//     // Set the opacity of logobox
+//     logobox.style.opacity = opacity.toFixed(2); // Limit opacity to two decimal places for smoother transition
 
-    // Calculate the new top position for the logobox based on scroll position
-  var newPosition = 50 + scrollPosition * 1; // Adjust the scroll speed as needed
+//     // Calculate the new top position for the logobox based on scroll position
+//   var newPosition = 50 + scrollPosition * 1; // Adjust the scroll speed as needed
 
-  // Apply the new position to the logobox
-  logobox.style.top = newPosition + 'vh';
+//   // Apply the new position to the logobox
+//   logobox.style.top = newPosition + 'vh';
 
-  });
+//   });
 
 // upload and store image on index.html
 document.addEventListener("DOMContentLoaded", function() {
@@ -280,55 +319,3 @@ function applyImageDataFilter(imageData) {
         imageData.data[i + 2] = contrast * (imageData.data[i + 2] - 128) + 128; // Blue
     }
 }
-
-
-// // Check if the current page is index.html
-// if (window.location.pathname === '/index.html') {
-//     // Menu fade in
-//     window.addEventListener('scroll', function() {
-//         var menubox = document.getEle// Menu fade in
-//         window.addEventListener('scroll', function() {
-//           var menubox = document.getElementById('menubox');
-//           if (window.scrollY > 100) {
-//               if (menubox.style.display !== 'block') {
-//                   menubox.style.display = 'block';
-//                   fadeIn(menubox); // Call fadeIn function to add fade-in effect
-//               }
-//           } else {
-//               menubox.style.display = 'none';
-//           }
-//         });
-        
-//         function fadeIn(element) {
-//           var opacity = 0;
-//           var intervalID = setInterval(function() {
-//               if (opacity < 1) {
-//                   opacity += 0.1;
-//                   element.style.opacity = opacity;
-//               } else {
-//                   clearInterval(intervalID);
-//               }
-//           }, 50);
-//         }mentById('menubox');
-//         if (window.scrollY > 100) {
-//             if (menubox.style.display !== 'block') {
-//                 menubox.style.display = 'block';
-//                 fadeIn(menubox); // Call fadeIn function to add fade-in effect
-//             }
-//         } else {
-//             menubox.style.display = 'none';
-//         }
-//     });
-// }
-
-// function fadeIn(element) {
-//     var opacity = 0;
-//     var intervalID = setInterval(function() {
-//         if (opacity < 1) {
-//             opacity += 0.1;
-//             element.style.opacity = opacity;
-//         } else {
-//             clearInterval(intervalID);
-//         }
-//     }, 50);
-// }
