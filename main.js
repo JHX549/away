@@ -1,19 +1,21 @@
 // Check if the current page is index.html
 if (window.location.pathname === '/index.html') {
-// Event listener for changing opacity of menubox
-window.addEventListener('scroll', function() {
-    var menubox = document.getElementById('menubox');
-    var scrollPosition = window.scrollY;
+    // Event listener for changing opacity of menubox
+    window.addEventListener('scroll', function() {
+        var menubox = document.getElementById('menubox');
+        var scrollPosition = window.scrollY;
+        var windowHeight = window.innerHeight;
 
-    // Calculate opacity based on scroll position
-    var opacity = 0 + (scrollPosition / (window.innerHeight * 1));
-    opacity = Math.max(0, opacity); // Ensure opacity is not negative
-    opacity = Math.min(1, opacity); // Ensure opacity is not greater than 1
+        // Calculate opacity based on scroll position
+        var maxOpacityScroll = 100; // Adjust this value to change when the menu appears fully
+        var opacity = scrollPosition / maxOpacityScroll;
+        opacity = Math.min(1, opacity); // Ensure opacity is not greater than 1
 
-    // Set the opacity of menubox and sentence
-    menubox.style.opacity = opacity.toFixed(2); // Limit opacity to two decimal places for smoother transition
-});
+        // Set the opacity of menubox
+        menubox.style.opacity = opacity.toFixed(2); // Limit opacity to two decimal places for smoother transition
+    });
 }
+
 // Event listener for changing opacity of both logobox and sentence
 window.addEventListener('scroll', function() {
     var logobox = document.getElementById('logobox');
@@ -197,13 +199,13 @@ document.addEventListener("DOMContentLoaded", function() {
         if (isReadyState) {
           controlbars.style.display = "block";
           typebox.style.display = "block";
-          letgo.style.display= "none";
+        //   letgo.style.display= "none";
           preserve.style.display = "none";
           readybutton.textContent = "ready";
         } else {
           controlbars.style.display = "none";
           typebox.style.display = "none";
-          letgo.style.display= "none";
+        //   letgo.style.display= "none";
           preserve.style.display = "block";
           readybutton.textContent = "longer";
         }
