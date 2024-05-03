@@ -4,7 +4,7 @@ if (window.location.pathname === '/index.html') {
     window.addEventListener('scroll', function() {
         var menubox = document.getElementById('menubox');
         if (window.scrollY > 100) {
-            if (menubox.style.display == 'none') {
+            if (menubox.style.display !== 'block') {
                 menubox.style.display = 'block';
                 fadeIn(menubox); // Call fadeIn function to add fade-in effect
             }
@@ -23,7 +23,7 @@ function fadeIn(element) {
         } else {
             clearInterval(intervalID);
         }
-    },);
+    },20);
 }
 
 // Event listener for changing opacity of both logobox and sentence
