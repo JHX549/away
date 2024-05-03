@@ -23,7 +23,7 @@ function fadeIn(element) {
         } else {
             clearInterval(intervalID);
         }
-    }, 50);
+    },);
 }
 
 // Event listener for changing opacity of both logobox and sentence

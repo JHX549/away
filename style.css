@@ -35,6 +35,7 @@ a:link{
     text-align: right;
     z-index: 2;
     display: block;
+    opacity: 0;
 }
 
 #menu {
