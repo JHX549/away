@@ -1,3 +1,31 @@
+// Check if the current page is index.html
+if (window.location.pathname === '/index.html') {
+    // Menu fade in
+    window.addEventListener('scroll', function() {
+        var menubox = document.getElementById('menubox');
+        if (window.scrollY > 100) {
+            if (menubox.style.display == 'none') {
+                menubox.style.display = 'block';
+                fadeIn(menubox); // Call fadeIn function to add fade-in effect
+            }
+        } else {
+            menubox.style.display = 'none';
+        }
+    });
+}
+
+function fadeIn(element) {
+    var opacity = 0;
+    var intervalID = setInterval(function() {
+        if (opacity < 1) {
+            opacity += 0.1;
+            element.style.opacity = opacity;
+        } else {
+            clearInterval(intervalID);
+        }
+    }, 50);
+}
+
 // Event listener for changing opacity of both logobox and sentence
 window.addEventListener('scroll', function() {
     var logobox = document.getElementById('logobox');
@@ -313,32 +341,3 @@ function applyImageDataFilter(imageData) {
 //         }
 //     }, 50);
 // }
-
-// Check if the current page is index.html
-if (window.location.pathname === '/index.html') {
-    console.log('Executing JavaScript for index.html');
-    // Menu fade in
-    window.addEventListener('scroll', function() {
-        var menubox = document.getElementById('menubox');
-        if (window.scrollY > 100) {
-            if (menubox.style.display !== 'block') {
-                menubox.style.display = 'block';
-                fadeIn(menubox); // Call fadeIn function to add fade-in effect
-            }
-        } else {
-            menubox.style.display = 'none';
-        }
-    });
-}
-
-function fadeIn(element) {
-    var opacity = 0;
-    var intervalID = setInterval(function() {
-        if (opacity < 1) {
-            opacity += 0.1;
-            element.style.opacity = opacity;
-        } else {
-            clearInterval(intervalID);
-        }
-    }, 50);
-}
