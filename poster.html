@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+    <title>just a little bit longer</title>
+  </head>
+  <body>
+    <!-- menu box starts -->
+    <div id="menubox">
+      <a href="index.html">
+        <img src="images/icon.png" id="menu" />
+      </a>
+      <div id="menudrop">
+        <a href="gallery.html" class="linktext">Gallery</a>
+        <a href="about.html" class="linktext">About</a>
+      </div>
+    </div>
+    <!-- menu box ends -->
+    <!-- poster template starts -->
+    <br />
+    <div id="posterbox">
+      <div id="postertitle">
+        Just<br />a<br />little<br />bit<br />longer<br />
+      </div>
+      <!-- logo goes here -->
+      <img src="images/menu.png" id="posterlogo" />
+      <!-- uploaded image goes here -->
+      <img id="uploadedImage" src="" alt="Uploaded Image" />
+      <!-- uploaded image goes ends -->
+    </div>
+    <!-- poster template ends -->
+    <!-- Try to recover the image -->
+    <div id="recover">Try to recover the image.</div>
+    <!-- Try to recover the image end -->
+    <!-- buttons starts -->
+    <div id="controlbars">
+      <label for="brightness" class="controlbarname">Light up</label>
+      <input
+        class="controlbar"
+        type="range"
+        id="brightness"
+        min="0"
+        max="150"
+        value="100"
+        step="1"
+        onchange="applyFilter()"
+        data-filter="brightness"
+        data-scale="%"
+      />
+      <label for="contrast" class="controlbarname">Balance</label>
+      <input
+        class="controlbar"
+        type="range"
+        id="contrast"
+        min="0"
+        max="150"
+        value="100"
+        step="1"
+        onchange="applyFilter()"
+        data-filter="contrast"
+        data-scale="%"
+      />
+      <label for="invert" class="controlbarname">Redeem</label>
+      <input
+        class="controlbar"
+        type="range"
+        id="invert"
+        min="0"
+        max="200"
+        value="100"
+        step="1"
+        onchange="applyFilter()"
+        data-filter="invert"
+        data-scale="%"
+      />
+      <!-- <div class="slider-container">
+        <label for="imageSizeSlider" class="controlbarname">Resize</label>
+        <input
+          class="controlbar"
+          type="range"
+          id="imageSizeSlider"
+          min="1"
+          max="200"
+          value="100"
+          step="1"
+        />
+      </div> -->
+    </div>
+    <div id="typebox">
+      <label for="typestatus" class="controlbarname">Switch</label>
+      <div id="typestatus"></div>
+    </div>
+    <label id="readybutton">ready</label>
+    <!-- buttons ends -->
+    <!-- after ready -->
+    <label id="preserve">preserve</label>
+    <label id="letgo" for="posterbox">let go</label>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
+    <script defer src="main.js"></script>
+  </body>
+</html>
