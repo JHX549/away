@@ -35,7 +35,6 @@ a:link{
     text-align: right;
     z-index: 2;
     display: block;
-    opacity: 0;
 }
 
 #menu {
@@ -292,7 +291,7 @@ input[type=range]{
     box-shadow: rgba(0, 0, 0, 0.1) 1.95px 1.95px 2.6px;
 }
 
-/* #letgo{
+#letgo{
     display: none;
     padding:0.5vw;
     width: 30vw;
@@ -302,7 +301,7 @@ input[type=range]{
     text-align: center;
     font-size: 1.8vw;
     box-shadow: rgba(0, 0, 0, 0.1) 1.95px 1.95px 2.6px;
-} */
+}
 /* poster template ends */
 
 /* Gallery */
